@@ -1,0 +1,18 @@
+package start.mvc.spring.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import start.mvc.spring.entity.News;
+
+public interface NewsDao extends JpaRepository<News, Integer> {
+
+	List<News> findByType(String type);
+	
+	@Query("select n from News n where n.type = :type")
+	List<News> findCategoryNews(String type);
+
+
+}
