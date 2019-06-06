@@ -16,7 +16,7 @@ import start.mvc.spring.entity.News;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
-public class NewsIntegrationTest {
+public class NewsClientIntegrationTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
