@@ -5,7 +5,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-group = 'api.user.msa'
+group = 'gateway.api.msa'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -25,12 +25,13 @@ ext {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+	implementation 'org.springframework.cloud:spring-cloud-starter-security'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.projectlombok:lombok:1.18.6'
+	compile 'com.h2database:h2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
